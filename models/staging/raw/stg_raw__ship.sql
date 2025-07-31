@@ -4,7 +4,7 @@ WITH source AS (
 
 renamed AS (
     SELECT
-        orders_id AS order_id,  -- on standardise le nom
+        orders_id AS orders_id,  -- on standardise le nom
         CAST(shipping_fee AS FLOAT64) AS shipping_fee,
         CAST(ship_cost AS FLOAT64) AS ship_cost,
         logcost
