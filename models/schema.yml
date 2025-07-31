@@ -1,10 +1,36 @@
- # schema.yml
+version: 2
 
- version: 2
+sources:
+  - name: raw
+    database: engaged-precept-465908-r8
+    schema: gz_raw_data
+    description: Données brutes.
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: Données de vente brutes
+        columns:
+          - name: order_id
+            description: Identifiant unique de la commande
+          - name: order_date
+            description: Date de la commande
+          - name: sales_amount
+            description: Montant de la commande
 
- sources:
-   - name: gz_raw_data
-     tables:
-       - name: raw_gz_sales
-       - name: raw_gz_product
-       - name: raw_gz_ship
+      - name: product
+        identifier: raw_gz_product
+        description: Données produits
+        columns:
+          - name: product_id
+            description: Identifiant unique du produit
+          - name: purchase_price
+            description: Prix d'achat du produit
+
+      - name: ship
+        identifier: raw_gz_ship
+        description: Données de livraison
+        columns:
+          - name: ship_id
+            description: Identifiant unique de la livraison
+          - name: ship_cost
+            description: Coût de la livraison
